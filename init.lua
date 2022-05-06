@@ -1,0 +1,10 @@
+require('plugins')
+require('treesitter-config')
+require('options')
+require('lualine-config')
+require('bufferline-config')
+require('nvim-tree-config')
+require('telescope-config')
+require('keybindings-config')
+require('lsp-server-config')
+vim.cmd[[colorscheme nord]]
