@@ -63,4 +63,6 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
 
   use 'MichaHoffmann/tree-sitter-hcl'
+
+  use "lukas-reineke/lsp-format.nvim"
 end)

@@ -109,4 +109,26 @@ require("nvim-lsp-installer").setup {
         capabilities = capabilities
   }
 
+  require "lsp-format".setup {
+    typescript = { tab_width = 4 },
+    yaml = { tab_width = 2 },
+  }
+
+  local prettier = {
+      formatCommand = [[prettier --stdin-filepath ${INPUT} ${--tab-width:tab_width}]],
+      formatStdin = true,
+  }
+ 
+  require "lspconfig".tsserver.setup {
+      on_attach = require "lsp-format".on_attach,
+      init_options = { documentFormatting = true },
+      settings = {
+          languages = {
+              typescript = { prettier },
+              yaml = { prettier },
+          },
+      },
+  }
+
+
 end
